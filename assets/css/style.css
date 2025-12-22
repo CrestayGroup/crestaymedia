@@ -79,15 +79,19 @@ body {
   max-width: 480px;
 }
 
-.hero-image img {
-  width: 100%;
-  max-width: 680px;
+
+ .hero-image img {
   display: block;
-  margin: auto;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   background: transparent;
   box-shadow: none;
-  mask-image: radial-gradient(circle, #000 60%, transparent 100%);
+  border: none;
+   mask-image: radial-gradient(circle, #000 60%, transparent 100%);
 }
+
+ 
 
 
 
