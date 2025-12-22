@@ -59,7 +59,6 @@ body {
   grid-template-columns: 1fr 1fr;
   padding: 120px 80px;
   gap: 40px;
-  .hero {
   background: #0e0e0e; 
   overflow: hidden;
 }
