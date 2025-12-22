@@ -59,7 +59,11 @@ body {
   grid-template-columns: 1fr 1fr;
   padding: 120px 80px;
   gap: 40px;
+  .hero {
+  background: #0e0e0e; 
+  overflow: hidden;
 }
+
 
 .hero h1 {
   font-size: 64px;
@@ -78,11 +82,14 @@ body {
 
 .hero-image img {
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
   display: block;
   margin: auto;
-  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
+  background: transparent;
+  box-shadow: none;
+  mask-image: radial-gradient(circle, #000 60%, transparent 100%);
 }
+
 
 
 .mockup-placeholder {
