@@ -53,42 +53,66 @@ body {
   padding: 10px 18px;
 }
 
-/* HERO */
+/* ===== HERO SECTION ===== */
+
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 120px 80px;
-  gap: 40px;
-  background: #0e0e0e; 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(
+    circle at right center,
+    #1a1a1a 0%,
+    #0e0e0e 60%
+  );
   overflow: hidden;
 }
 
-
-.hero h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
+.hero-text {
+  max-width: 520px;
 }
 
-.hero h1 span {
-  color: var(--accent);
+.hero-text h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  color: #ffffff;
 }
 
-.hero p {
-  color: var(--muted);
-  margin-bottom: 30px;
-  max-width: 480px;
+.hero-text h1 span {
+  color: #f59e0b;
 }
 
+.hero-text p {
+  margin: 24px 0;
+  color: #b5b5b5;
+  font-size: 1.05rem;
+}
 
- .hero-image img {
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
   display: block;
   width: 100%;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
   background: transparent;
-  box-shadow: none;
   border: none;
-   mask-image: radial-gradient(circle, #000 60%, transparent 100%);
+  box-shadow: none;
+  transform: translateY(30px) scale(1.02);
+}
+
+/* subtle glow */
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
  
