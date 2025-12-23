@@ -272,6 +272,37 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 
+
+
+
+   /* ===== GLOBAL IMAGE FIX ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero-image img,
+.hero-visual img {
+  width: 100%;
+  max-width: 480px;   /* ← هذا المفتاح */
+  margin: 0 auto;
+}
+
+/* ===== WHY SECTION IMAGE ===== */
+.why-image img {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ===== SAFETY NET (أي صورة ثانية) ===== */
+section img {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
   nav a {
     display: none;
   }
