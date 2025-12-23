@@ -232,10 +232,19 @@ nav a:hover {
   color: #f4a43c;
 }
 
+.why-image {
+  display: flex;
+  justify-content: center;
+}
+
 .why-image img {
   width: 100%;
-  max-width: 520px;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  opacity: 0.95;
 }
+
 
 
 
