@@ -260,6 +260,23 @@ nav a:hover {
   padding: 32px;
   border-radius: 16px;
 }
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.process-flow span {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.process-flow h3 {
+  margin: 12px 0 8px;
+}
 
 /* =========================
    CONTACT
