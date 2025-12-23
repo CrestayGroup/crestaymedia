@@ -1,9 +1,7 @@
 /* =========================
    RESET + VARIABLES
 ========================= */
-body {
-  background: red !important;
-}
+
 
 :root {
   --bg-main: #0f1115;
