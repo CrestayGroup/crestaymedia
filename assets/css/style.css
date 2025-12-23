@@ -289,3 +289,106 @@ nav a:hover {
 }
 
 
+
+
+
+
+
+
+
+
+/* =========================
+   WHY SECTION – FINAL FIX
+========================= */
+
+/* إجبار النص يكون LTR ومحاذاة صحيحة */
+.why-section {
+  direction: ltr;
+}
+
+.why-text {
+  text-align: left;
+}
+
+/* العنوان */
+.why-text h2 {
+  margin-bottom: 24px;
+}
+
+/* القائمة */
+.why-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* كل سطر */
+.why-text li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* علامة الصح – برتقالي ناعم */
+.why-text li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ff8a3d; /* برتقالي قريب من accent */
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* =========================
+   IMAGE STYLING (PRO)
+========================= */
+
+.why-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-image img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+
+  /* دمج بصري */
+  border-radius: 18px;
+  background: transparent;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  filter: contrast(1.05) saturate(1.05);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+/* Hover subtle (احترافي مو مبالغ) */
+.why-image img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .why-text {
+    text-align: left;
+  }
+}
+
+
