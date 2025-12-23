@@ -1,14 +1,19 @@
 /* =========================
-   RESET & VARIABLES
+   RESET + VARIABLES
 ========================= */
 :root {
-  --bg: #0e0e0e;
-  --bg-soft: #141414;
-  --text: #e5e5e5;
-  --muted: #a1a1aa;
-  --accent: #f59e0b;
+  --bg-main: #0f1115;
+  --bg-card: #151821;
+  --bg-soft: #1b1f2a;
+
+  --text-main: #ffffff;
+  --text-muted: #b5b8c5;
+
+  --accent: #ff8a2a;
+  --accent-soft: rgba(255,138,42,.15);
+
   --radius: 14px;
-  --transition: all 0.3s ease;
+  --transition: .35s ease;
 }
 
 * {
@@ -23,8 +28,8 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg-main);
+  color: var(--text-main);
   line-height: 1.6;
 }
 
@@ -32,20 +37,21 @@ body {
    GLOBAL
 ========================= */
 section {
-  padding: 120px 8%;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 24px;
 }
 
 h1, h2, h3 {
   line-height: 1.2;
 }
 
-h2 {
-  font-size: 40px;
-  margin-bottom: 48px;
-}
-
 p {
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 a {
@@ -53,238 +59,245 @@ a {
   color: inherit;
 }
 
-/* =========================
-   BUTTONS
-========================= */
 .btn {
   display: inline-block;
-  padding: 14px 28px;
-  border-radius: var(--radius);
   background: var(--accent);
   color: #000;
+  padding: 14px 28px;
+  border-radius: 999px;
   font-weight: 600;
   transition: var(--transition);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.btn.outline {
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  box-shadow: 0 10px 30px var(--accent-soft);
 }
 
 /* =========================
    HEADER
 ========================= */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(14, 14, 14, 0.85);
+  background: rgba(15,17,21,.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 10;
 }
 
-header nav {
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 8%;
 }
 
 .logo {
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
 }
 
 .logo span {
   color: var(--accent);
 }
 
-nav a {
-  margin-left: 32px;
-  color: var(--text);
-  font-weight: 500;
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
 
-nav a:hover {
-  color: var(--accent);
+.nav-links a {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--text-main);
 }
 
 /* =========================
    HERO
 ========================= */
 .hero {
-  min-height: 100vh;
+  background: radial-gradient(circle at top, #1b1f2a, transparent 60%);
+}
+
+.hero-inner {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 60px;
 }
 
-.hero-text h1 {
-  font-size: 64px;
-  margin-bottom: 24px;
+.hero h1 {
+  font-size: clamp(2.8rem, 4vw, 4rem);
 }
 
-.hero-text h1 span {
+.hero h1 span {
   color: var(--accent);
 }
 
-.hero-text p {
+.hero p {
+  margin: 24px 0 40px;
   max-width: 520px;
-  margin-bottom: 32px;
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: var(--radius);
-  opacity: 0.95;
+  max-width: 520px;
+  display: block;
+  margin-left: auto;
 }
 
 /* =========================
    SERVICES
 ========================= */
+.services h2 {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
+  margin-top: 70px;
 }
 
 .service-card {
-  background: var(--bg-soft);
+  background: var(--bg-card);
   padding: 32px;
   border-radius: var(--radius);
   transition: var(--transition);
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  background: #1a1a1a;
+  transform: translateY(-8px);
+  background: var(--bg-soft);
 }
 
-.service-card img {
-  width: 42px;
-  margin-bottom: 20px;
+.service-card .icon {
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 18px;
 }
 
 .service-card h3 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* =========================
    WHY CRESTAY
 ========================= */
 .why {
+  background: linear-gradient(180deg, transparent, #0c0e13);
+}
+
+.why-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.why-list li {
+.why h2 {
+  font-size: 2.6rem;
+  margin-bottom: 24px;
+}
+
+.why ul {
   list-style: none;
-  margin-bottom: 16px;
-  padding-left: 28px;
-  position: relative;
 }
 
-.why-list li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-
-.why-image {
+.why li {
+  margin-bottom: 18px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
-.why-image img {
-  width: 100%;
-  max-width: 380px;
-  border-radius: var(--radius);
+.why li::before {
+  content: "✔";
+  color: var(--accent);
 }
 
 /* =========================
    PROCESS
 ========================= */
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
+.process h2 {
   text-align: center;
+  font-size: 2.6rem;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 70px;
 }
 
 .process-step {
-  background: var(--bg-soft);
+  background: var(--bg-card);
   padding: 32px;
   border-radius: var(--radius);
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 
 .process-step span {
-  display: inline-block;
-  margin-bottom: 16px;
-  font-size: 28px;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--accent);
 }
 
 /* =========================
-   CONTACT
+   CTA
 ========================= */
-.contact {
+.cta {
   text-align: center;
+  background: radial-gradient(circle at center, #1b1f2a, transparent 70%);
 }
 
-.contact h2 {
+.cta h2 {
+  font-size: 2.6rem;
   margin-bottom: 24px;
 }
 
-.contact .btn {
-  margin-top: 32px;
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  border-top: 1px solid #1b1f2a;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-  .hero {
+  .hero-inner,
+  .why-inner {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-text h1 {
-    font-size: 44px;
+  .hero-image img {
+    margin: auto;
   }
 
-  .hero-text p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  nav a {
-    margin-left: 16px;
-  }
-
-  .why {
-    grid-template-columns: 1fr;
+  .process-step {
+    flex-direction: column;
     text-align: center;
   }
 
-  .why-list {
-    margin-top: 24px;
+  .nav-links {
+    display: none;
   }
 }
+
