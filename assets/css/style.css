@@ -237,46 +237,6 @@ nav a:hover {
   box-shadow: 0 35px 70px rgba(0,0,0,.6);
 }
 
-/* =========================
-   PROCESS
-========================= */
-.process {
-  padding: 160px 8%;
-}
-
-.process h2 {
-  font-size: 36px;
-  margin-bottom: 70px;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
-}
-
-.process-step {
-  background: var(--bg-card);
-  padding: 32px;
-  border-radius: 16px;
-}
-.process-flow {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.process-flow span {
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.process-flow h3 {
-  margin: 12px 0 8px;
-}
 
 /* =========================
    CONTACT
@@ -290,6 +250,57 @@ nav a:hover {
   font-size: 34px;
   margin-bottom: 40px;
 }
+
+.process-section {
+  padding: 120px 8%;
+  background: #0f1115;
+}
+
+.process-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 80px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.process-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 36px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.process-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.process-number {
+  color: #ff8a00;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.process-item h3 {
+  margin: 16px 0 10px;
+  font-size: 22px;
+}
+
+.process-item p {
+  opacity: .8;
+  line-height: 1.6;
+}
+
+
+
+
 
 /* =========================
    ANIMATION
@@ -404,69 +415,3 @@ nav a:first-child:hover {
   }
 
 
-   /* =========================
-   PROCESS SECTION
-========================= */
-
-.process {
-  padding: 120px 24px;
-  background: #0f1115;
-}
-
-.process-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
-}
-
-.process-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 20px;
-  padding: 36px 28px;
-  transition: all .4s ease;
-  position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-/* رقم الخطوة */
-.process-card .step {
-  color: #ff9f1c;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-/* العنوان */
-.process-card h3 {
-  margin: 14px 0 8px;
-  font-size: 20px;
-}
-
-/* النص */
-.process-card p {
-  color: #b5b8c0;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Hover */
-.process-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255,159,28,0.08);
-  border-color: rgba(255,159,28,0.4);
-}
-
-/* ===== Animation Trigger ===== */
-.process-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-  .menu-toggle {
-    display: flex;
-  }
-}
