@@ -422,34 +422,34 @@ nav a:first-child:hover {
    FOOTER – CRESTAY MEDIA
    ========================= */
 
+
 .site-footer {
-  background: #0f172a; /* dark navy */
-  padding: 60px 24px 30px;
+  background: #0f1115;
+  padding: 80px 8% 32px;
   margin-top: 120px;
   color: #e5e7eb;
-  font-family: inherit;
 }
 
 /* container */
 .site-footer .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 40px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 
-/* brand block */
+/* left */
 .site-footer .footer-left h3 {
-  margin: 0 0 12px;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 
 .site-footer .footer-left h3 span {
-  color: #f59e0b;
+  color: var(--accent);
 }
 
 .site-footer .footer-left p {
@@ -457,24 +457,22 @@ nav a:first-child:hover {
   font-size: 14px;
   line-height: 1.6;
   color: #9ca3af;
-  margin: 0;
 }
 
-/* socials */
+/* right */
 .site-footer .footer-right {
   display: flex;
-  gap: 18px;
+  gap: 20px;
 }
 
 .site-footer .footer-right a {
-  position: relative;
   font-size: 14px;
   color: #9ca3af;
   text-decoration: none;
-  transition: color 0.3s ease;
+  position: relative;
+  transition: color .3s ease;
 }
 
-/* underline animation */
 .site-footer .footer-right a::after {
   content: "";
   position: absolute;
@@ -482,8 +480,8 @@ nav a:first-child:hover {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #f59e0b;
-  transition: width 0.3s ease;
+  background: var(--accent);
+  transition: width .3s ease;
 }
 
 .site-footer .footer-right a:hover {
@@ -494,9 +492,9 @@ nav a:first-child:hover {
   width: 100%;
 }
 
-/* copyright */
+/* bottom */
 .site-footer .footer-bottom {
-  margin-top: 40px;
+  margin-top: 48px;
   padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.06);
   text-align: center;
@@ -506,20 +504,19 @@ nav a:first-child:hover {
 
 /* =========================
    RESPONSIVE
-   ========================= */
-
+========================= */
 @media (max-width: 768px) {
+  .site-footer {
+    padding: 60px 6% 28px;
+  }
+
   .site-footer .footer-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
   }
 
   .site-footer .footer-right {
     justify-content: center;
     flex-wrap: wrap;
-  }
-
-  .site-footer .footer-left p {
-    margin: 0 auto;
   }
 }
