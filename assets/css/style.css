@@ -403,6 +403,69 @@ nav a:first-child:hover {
     display: none;
   }
 
+
+   /* =========================
+   PROCESS SECTION
+========================= */
+
+.process {
+  padding: 120px 24px;
+  background: #0f1115;
+}
+
+.process-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+.process-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: all .4s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* رقم الخطوة */
+.process-card .step {
+  color: #ff9f1c;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* العنوان */
+.process-card h3 {
+  margin: 14px 0 8px;
+  font-size: 20px;
+}
+
+/* النص */
+.process-card p {
+  color: #b5b8c0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Hover */
+.process-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,159,28,0.08);
+  border-color: rgba(255,159,28,0.4);
+}
+
+/* ===== Animation Trigger ===== */
+.process-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   .menu-toggle {
     display: flex;
   }
