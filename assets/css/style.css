@@ -330,3 +330,10 @@ nav a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+nav a:first-child {
+  opacity: 0.6;
+}
+
+nav a:first-child:hover {
+  opacity: 1;
+}
