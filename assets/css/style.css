@@ -288,3 +288,12 @@ nav a:hover {
     margin-top: 24px;
   }
 }
+/* FORCE IMAGE SIZE FIX */
+.hero-image img,
+.why-image img {
+  max-width: 320px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
+  display: block;
+}
