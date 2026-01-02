@@ -1,151 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crestay Media</title>
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  background:#0b0b0b;
+  color:#eaeaea;
+  overflow:hidden;
+}
 
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+/* COLORS */
+:root {
+  --accent:#f59e0b;
+  --bg:#0b0b0b;
+  --card:#121212;
+}
 
-<body>
+/* HEADER */
+.site-header {
+  position:fixed;
+  top:0;
+  width:100%;
+  height:72px;
+  background:rgba(14,14,14,.95);
+  z-index:1000;
+}
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="nav">
-    <div class="logo">CRESTAY<span>MEDIA</span></div>
+.nav {
+  max-width:1200px;
+  margin:auto;
+  height:100%;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#why">Crestay</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#" id="contactBtn">Contact</a>
-    </nav>
+.logo span { color:var(--accent); }
+nav a { margin-left:24px; }
 
-    <div class="menu-toggle" id="menuToggle">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</header>
+/* MOBILE */
+.menu-toggle { display:none; }
+.mobile-menu {
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:32px;
+  transform:translateY(-100%);
+  transition:.4s;
+  z-index:2000;
+}
+.mobile-menu.active { transform:translateY(0); }
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a>
-  <a href="#why">Crestay</a>
-  <a href="#services">Services</a>
-  <a href="#process">Process</a>
-  <a href="#" id="contactBtnMobile">Contact</a>
-</div>
+/* CONTENT */
+.content {
+  position:fixed;
+  top:72px;
+  bottom:80px;
+  width:100%;
+  overflow-y:auto;
+}
 
-<!-- CONTENT SCROLL AREA -->
-<main class="content">
+/* HERO */
+.hero {
+  min-height:100vh;
+  padding:120px 6%;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  position:relative;
+  isolation:isolate;
+}
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-text">
-    <h1>Design That <span>Performs</span>.</h1>
-    <p>Design-driven digital experiences built for clarity, performance and growth.</p>
-    <a href="#" class="btn" id="startProject">Start a Project</a>
-  </div>
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:radial-gradient(circle at 70% 50%, rgba(245,158,11,.15), transparent 60%);
+  z-index:-1;
+}
 
-  <div class="hero-visual">
-    <img src="assets/image/hero-mockup.png" alt="Crestay Hero">
-  </div>
-</section>
+.hero-visual img {
+  max-width:520px;
+  filter:drop-shadow(0 40px 80px rgba(0,0,0,.7));
+  transition:.6s;
+}
+.hero-visual img:hover {
+  transform:translateY(-10px);
+  filter:drop-shadow(0 70px 120px rgba(0,0,0,.8));
+}
 
-<!-- WHY -->
-<section id="why" class="why-section">
-  <div class="why-grid">
-    <div class="why-text">
-      <h2>Why Crestay Media?</h2>
-      <ul>
-        <li>Performance-driven design focused on results</li>
-        <li>Clean, modern & scalable solutions</li>
-        <li>Clear structure that converts users</li>
-      </ul>
-    </div>
+/* WHY */
+.why-grid {
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:80px;
+}
 
-    <div class="why-image">
-      <img src="assets/image/why-mock-up.png" alt="Why Crestay">
-    </div>
-  </div>
-</section>
+.why-image img {
+  max-width:420px;
+  filter:drop-shadow(0 30px 70px rgba(0,0,0,.6));
+}
 
-<!-- SERVICES -->
-<section id="services" class="services">
-  <h2>Our Services</h2>
+/* SERVICES + PROCESS */
+.card, .process-item {
+  background:var(--card);
+  padding:36px;
+  border-radius:18px;
+  position:relative;
+  isolation:isolate;
+  transition:.3s;
+}
+.card::after, .process-item::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(140deg,transparent,rgba(245,158,11,.2),transparent);
+  opacity:0;
+  transition:.3s;
+  z-index:-1;
+}
+.card:hover::after, .process-item:hover::after { opacity:1; }
+.card:hover, .process-item:hover { transform:translateY(-8px); }
 
-  <div class="services-grid">
-    <div class="card">Brand Identity</div>
-    <div class="card">UI / UX Design</div>
-    <div class="card">Web Development</div>
-    <div class="card">E-Commerce</div>
-    <div class="card">Performance Optimization</div>
-  </div>
-</section>
+/* FOOTER */
+.site-footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#0f1115;
+  padding:20px 6%;
+  z-index:1000;
+}
 
-<!-- PROCESS -->
-<section id="process" class="process-section">
-  <h2 class="process-title">Our Process</h2>
+/* OVERLAY */
+.overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  z-index:5000;
+}
+.overlay.active {
+  opacity:1;
+  pointer-events:auto;
+}
+.overlay-content {
+  text-align:center;
+  position:relative;
+}
+.close-overlay {
+  position:absolute;
+  top:-40px;
+  right:-40px;
+  cursor:pointer;
+}
 
-  <div class="process-grid">
-    <div class="process-item">01 Discovery</div>
-    <div class="process-item">02 Strategy</div>
-    <div class="process-item">03 Design</div>
-    <div class="process-item">04 Build</div>
-    <div class="process-item">05 Launch</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <strong>CRESTAY MEDIA</strong>
-      <p>Design-driven digital experiences built for clarity and growth.</p>
-    </div>
-    <div>
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">Email</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2025 Crestay Media. All rights reserved.
-  </div>
-</footer>
-
-</main>
-
-<!-- CONTACT OVERLAY -->
-<div class="overlay" id="overlay">
-  <div class="overlay-content">
-    <h2>Let’s Build Something Great</h2>
-    <a href="mailto:media@crestay.com" class="btn">Contact Us</a>
-    <span class="close-overlay" id="closeOverlay">✕</span>
-  </div>
-</div>
-
-<!-- SCRIPT -->
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-menuToggle.onclick = () => mobileMenu.classList.toggle("active");
-
-const overlay = document.getElementById("overlay");
-document.getElementById("startProject").onclick =
-document.getElementById("contactBtn").onclick =
-document.getElementById("contactBtnMobile").onclick = e => {
-  e.preventDefault();
-  overlay.classList.add("active");
-};
-
-document.getElementById("closeOverlay").onclick = () =>
-  overlay.classList.remove("active");
-</script>
-
-</body>
-</html>
-
+/* BUTTON */
+.btn {
+  background:var(--accent);
+  padding:14px 32px;
+  border-radius:8px;
+  color:#111;
+}
 
