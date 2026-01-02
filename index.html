@@ -24,6 +24,8 @@
       <a href="#why">Crestay</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
+      <a href="#" class="nav-contact js-open-project">Contact</a>
+                 
     </nav>
 
     <!-- MOBILE TOGGLE -->
@@ -40,7 +42,9 @@
   <a href="#top">Home</a>
   <a href="#why">Crestay</a>
   <a href="#services">Services</a>
-  <a href="#process">Process</a>
+  <a href="#process">Process</a> 
+  <a href="#" class="nav-contact js-open-project">Contact</a>
+
 </div>
 
 
@@ -58,7 +62,8 @@
       We design brands, websites, and digital experiences built for clarity,
       performance, and growth.
     </p>
-    <a href="#" class="btn" id="startProject">Start a Project</a>
+    <a href="#" class="btn js-open-project">Start a Project</a>
+
   </div>
 
   <div class="hero-visual">
@@ -152,38 +157,47 @@
 <!-- SCRIPT -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menuToggle");
-  const menu = document.getElementById("mobileMenu");
-  const startBtn = document.getElementById("startProject");
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("projectOverlay");
 
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    document.body.style.overflow =
-      menu.classList.contains("active") ? "hidden" : "";
-  });
+  // Mobile menu toggle
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+      document.body.style.overflow =
+        mobileMenu.classList.contains("active") ? "hidden" : "";
+    });
 
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("active");
-      document.body.style.overflow = "";
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  // OPEN OVERLAY (Start Project + Contact)
+  document.querySelectorAll(".js-open-project").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
   });
 
-  startBtn.addEventListener("click", e => {
-    e.preventDefault();
-    overlay.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-
+  // CLOSE OVERLAY (click outside)
   overlay.addEventListener("click", e => {
     if (e.target === overlay) {
       overlay.classList.remove("active");
       document.body.style.overflow = "";
     }
   });
+
 });
 </script>
+
 
 </body>
 </html>
