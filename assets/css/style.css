@@ -449,4 +449,35 @@ section {
   }
 }
 
+/* =========================================
+   WHY IMAGE – MATCH HERO STYLE
+========================================= */
+
+.why-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-image img {
+  width: 100%;
+  max-width: 480px; /* نفس hero تقريبًا */
+  border-radius: 22px;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,.6));
+  transition: transform .6s ease, filter .6s ease;
+}
+
+@media (hover: hover) {
+  .why-image img:hover {
+    transform: translateY(-12px);
+    filter: drop-shadow(0 70px 140px rgba(0,0,0,.75));
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .why-image img {
+    max-width: 320px;
+  }
+}
 
