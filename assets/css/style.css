@@ -411,4 +411,52 @@ nav a:hover {
   padding-top: 20px;
   text-align: center;
 }
+/* =========================
+   MOBILE MENU FIX
+========================= */
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  transform: translateY(-100%);
+  transition: transform .4s ease;
+  z-index: 2500;
+}
+
+.mobile-menu a {
+  font-size: 22px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+}
+
 
