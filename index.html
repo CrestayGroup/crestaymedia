@@ -1,18 +1,18 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crestay Media</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header class="header">
+<!-- HEADER -->
+<header class="site-header">
   <div class="nav">
     <div class="logo">CRESTAY<span>MEDIA</span></div>
 
@@ -21,7 +21,7 @@
       <a href="#why">Crestay</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
-      <a href="#" id="openContact">Contact</a>
+      <a href="#" id="contactBtn">Contact</a>
     </nav>
 
     <div class="menu-toggle" id="menuToggle">
@@ -30,114 +30,120 @@
   </div>
 </header>
 
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home">Home</a>
   <a href="#why">Crestay</a>
   <a href="#services">Services</a>
   <a href="#process">Process</a>
-  <a href="#" id="openContactMobile">Contact</a>
+  <a href="#" id="contactBtnMobile">Contact</a>
 </div>
 
-<!-- CONTENT -->
+<!-- CONTENT SCROLL AREA -->
 <main class="content">
 
-  <section id="home" class="section hero">
-    <div class="hero-text">
-      <h1>Design That <span>Performs</span>.</h1>
-      <p>
-        We design brands and digital experiences built for clarity,
-        performance, and growth.
-      </p>
-      <a href="#" class="btn" id="startProject">Start a Project</a>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Design That <span>Performs</span>.</h1>
+    <p>Design-driven digital experiences built for clarity, performance and growth.</p>
+    <a href="#" class="btn" id="startProject">Start a Project</a>
+  </div>
+
+  <div class="hero-visual">
+    <img src="assets/image/hero-mockup.png" alt="Crestay Hero">
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="why-section">
+  <div class="why-grid">
+    <div class="why-text">
+      <h2>Why Crestay Media?</h2>
+      <ul>
+        <li>Performance-driven design focused on results</li>
+        <li>Clean, modern & scalable solutions</li>
+        <li>Clear structure that converts users</li>
+      </ul>
     </div>
 
-    <div class="hero-visual">
-      <img src="assets/image/hero-mockup.png" alt="Hero Visual">
+    <div class="why-image">
+      <img src="assets/image/why-mock-up.png" alt="Why Crestay">
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="why" class="section">
-    <div class="why-grid">
-      <div class="why-text">
-        <h2>Why Crestay Media?</h2>
-        <ul>
-          <li>Performance-driven design focused on results</li>
-          <li>Clean, modern & scalable solutions</li>
-          <li>Clear structure that converts users</li>
-        </ul>
-      </div>
+<!-- SERVICES -->
+<section id="services" class="services">
+  <h2>Our Services</h2>
 
-      <div class="why-image">
-        <img src="assets/image/why-mock-up.png" alt="Why Crestay">
-      </div>
+  <div class="services-grid">
+    <div class="card">Brand Identity</div>
+    <div class="card">UI / UX Design</div>
+    <div class="card">Web Development</div>
+    <div class="card">E-Commerce</div>
+    <div class="card">Performance Optimization</div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-section">
+  <h2 class="process-title">Our Process</h2>
+
+  <div class="process-grid">
+    <div class="process-item">01 Discovery</div>
+    <div class="process-item">02 Strategy</div>
+    <div class="process-item">03 Design</div>
+    <div class="process-item">04 Build</div>
+    <div class="process-item">05 Launch</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>CRESTAY MEDIA</strong>
+      <p>Design-driven digital experiences built for clarity and growth.</p>
     </div>
-  </section>
-
-  <section id="services" class="section dark">
-    <h2 class="center">Our Services</h2>
-
-    <div class="services-grid">
-      <div class="card">Brand Identity</div>
-      <div class="card">UI / UX Design</div>
-      <div class="card">Web Development</div>
-      <div class="card">E-Commerce</div>
-      <div class="card">Performance Optimization</div>
+    <div>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Email</a>
     </div>
-  </section>
-
-  <section id="process" class="section">
-    <h2 class="center">Our Process</h2>
-
-    <div class="process-grid">
-      <div class="process-item">01 Discovery</div>
-      <div class="process-item">02 Strategy</div>
-      <div class="process-item">03 Design</div>
-      <div class="process-item">04 Build</div>
-      <div class="process-item">05 Launch</div>
-    </div>
-  </section>
-
-</main>
-
-<!-- FOOTER (FIXED) -->
-<footer class="footer">
-  <div>
-    © 2025 Crestay Media · Instagram · Facebook · Email
+  </div>
+  <div class="footer-bottom">
+    © 2025 Crestay Media. All rights reserved.
   </div>
 </footer>
 
+</main>
+
 <!-- CONTACT OVERLAY -->
-<div class="overlay" id="contactOverlay">
-  <div class="overlay-box">
-    <button class="close" id="closeOverlay">×</button>
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
     <h2>Let’s Build Something Great</h2>
     <a href="mailto:media@crestay.com" class="btn">Contact Us</a>
+    <span class="close-overlay" id="closeOverlay">✕</span>
   </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
-const overlay = document.getElementById("contactOverlay");
-
 menuToggle.onclick = () => mobileMenu.classList.toggle("active");
 
-document.querySelectorAll("#openContact, #openContactMobile, #startProject")
-  .forEach(btn => {
-    if (!btn) return;
-    btn.onclick = e => {
-      e.preventDefault();
-      overlay.classList.add("active");
-      mobileMenu.classList.remove("active");
-    };
-  });
+const overlay = document.getElementById("overlay");
+document.getElementById("startProject").onclick =
+document.getElementById("contactBtn").onclick =
+document.getElementById("contactBtnMobile").onclick = e => {
+  e.preventDefault();
+  overlay.classList.add("active");
+};
 
 document.getElementById("closeOverlay").onclick = () =>
   overlay.classList.remove("active");
-
-overlay.onclick = e => {
-  if (e.target === overlay) overlay.classList.remove("active");
-};
 </script>
 
 </body>
