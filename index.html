@@ -15,11 +15,12 @@
   <div class="nav">
     <div class="logo">CRESTAY<span>MEDIA</span></div>
     <nav>
-      <div class="menu-toggle" id="menuToggle">
+  <div class="menu-toggle" id="menuToggle">
   <span></span>
   <span></span>
   <span></span>
 </div>
+
 
       <a href="#top">Home</a>
       <a href="#services">Services</a>
@@ -27,6 +28,11 @@
     </nav>
   </div>
 </header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#top">Home</a>
+  <a href="#services">Services</a>
+  <a href="#process">Process</a>
+</div>
 
 <section class="hero">
   <div class="hero-text fade-up">
@@ -189,16 +195,27 @@
   const menuToggle = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-  });
+  if (menuToggle && mobileMenu) {
 
-  document.querySelectorAll(".mobile-menu a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+
+      // lock scroll when menu is open
+      document.body.style.overflow =
+        mobileMenu.classList.contains("active") ? "hidden" : "";
     });
-  });
+
+    // close menu on link click
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+
+  }
 </script>
+
 
 </body>
 </html>
