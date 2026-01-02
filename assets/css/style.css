@@ -1,14 +1,13 @@
-/* =========================
-   RESET & BASE
-========================= */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -18,51 +17,38 @@ body {
   overflow: hidden;
 }
 
-/* Remove default link styles */
-a,
-a:visited,
-a:hover,
-a:focus {
-  color: inherit;
+a {
   text-decoration: none;
+  color: inherit;
 }
 
-/* =========================
-   VARIABLES
-========================= */
+/* ================= VARIABLES ================= */
 :root {
   --accent: #f59e0b;
   --bg: #0b0b0b;
-  --card: #121212;
+  --bg-soft: #0f1115;
+  --card: #151515;
   --muted: #9ca3af;
 }
 
-/* =========================
-   HEADER (FIXED)
-========================= */
+/* ================= HEADER ================= */
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 72px;
-  background: rgba(14, 14, 14, 0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(14,14,14,.96);
   z-index: 1000;
 }
 
 .nav {
   max-width: 1200px;
   margin: auto;
-  height: 100%;
   padding: 0 6%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo {
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .logo span {
@@ -72,28 +58,16 @@ a:focus {
 nav a {
   margin-left: 24px;
   font-size: 14px;
-  opacity: 0.85;
-  transition: opacity 0.3s;
+  opacity: .8;
 }
 
 nav a:hover {
   opacity: 1;
 }
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* ================= MOBILE MENU ================= */
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 24px;
-  height: 2px;
-  background: #fff;
 }
 
 .mobile-menu {
@@ -106,7 +80,7 @@ nav a:hover {
   align-items: center;
   gap: 32px;
   transform: translateY(-100%);
-  transition: 0.4s ease;
+  transition: .4s ease;
   z-index: 2000;
 }
 
@@ -114,44 +88,35 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* =========================
-   SCROLL CONTENT
-========================= */
+/* ================= SCROLL AREA ================= */
 .content {
   position: fixed;
   top: 72px;
-  bottom: 88px;
+  bottom: 90px; /* مساحة للفوتر */
   width: 100%;
   overflow-y: auto;
 }
 
-/* =========================
-   GLOBAL SECTION STYLE
-========================= */
+/* ================= GLOBAL SECTIONS ================= */
 section {
-  min-height: 100vh;
-  padding: 160px 6% 120px;
-  background: radial-gradient(
-      circle at 70% 40%,
-      rgba(245, 158, 11, 0.12),
-      transparent 60%
-    ),
-    #0b0b0b;
+  padding: 90px 6%;
+  background: var(--bg);
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 .hero {
+  max-width: 1200px;
+  margin: auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 60px;
   align-items: center;
-  gap: 80px;
 }
 
 .hero h1 {
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: 56px;
   line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .hero h1 span {
@@ -159,105 +124,100 @@ section {
 }
 
 .hero p {
-  margin: 24px 0 40px;
   max-width: 520px;
+  line-height: 1.6;
   color: var(--muted);
 }
 
 .hero-visual img {
-  max-width: 520px;
   width: 100%;
-  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.7));
-  transition: transform 0.6s ease, filter 0.6s ease;
+  max-width: 380px; /* 🔥 تصغير صارم */
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 25px 60px rgba(0,0,0,.7));
 }
 
-.hero-visual img:hover {
-  transform: translateY(-10px);
-  filter: drop-shadow(0 70px 120px rgba(0, 0, 0, 0.85));
+/* ================= WHY ================= */
+.why-section {
+  background: var(--bg);
 }
 
-/* =========================
-   WHY
-========================= */
 .why-grid {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
 }
 
-.why-text ul {
-  margin-top: 24px;
-  list-style: none;
+.why-text h2 {
+  margin-bottom: 24px;
 }
 
 .why-text li {
   margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .why-image img {
-  max-width: 420px;
   width: 100%;
-  filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.6));
+  max-width: 360px; /* 🔥 نفس منطق الهيرو */
+  display: block;
+  margin: auto;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* ================= SERVICES ================= */
+.services {
+  background: var(--bg-soft);
+}
+
 .services h2 {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .services-grid {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
+  gap: 28px;
 }
 
 .card {
   background: var(--card);
-  padding: 36px;
-  border-radius: 18px;
+  padding: 36px 24px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  position: relative;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 
-.card::after {
+/* مكان للأيقونة لو رجعتها */
+.card::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    140deg,
-    transparent,
-    rgba(245, 158, 11, 0.25),
-    transparent
-  );
-  opacity: 0;
-  border-radius: inherit;
-  transition: 0.3s;
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: .15;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
-.card:hover::after {
-  opacity: 1;
+/* ================= PROCESS ================= */
+.process-section {
+  background: var(--bg);
 }
 
-/* =========================
-   PROCESS
-========================= */
 .process-title {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .process-grid {
@@ -265,29 +225,23 @@ section {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 32px;
+  gap: 24px;
 }
 
 .process-item {
   background: var(--card);
-  padding: 32px;
-  border-radius: 16px;
+  padding: 28px 20px;
+  border-radius: 14px;
   text-align: center;
-  transition: transform 0.3s ease;
+  font-size: 14px;
 }
 
-.process-item:hover {
-  transform: translateY(-8px);
-}
-
-/* =========================
-   FOOTER (FIXED)
-========================= */
+/* ================= FOOTER ================= */
 .site-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 88px;
+  height: 90px;
   background: #0f1115;
   z-index: 1000;
 }
@@ -295,88 +249,38 @@ section {
 .footer-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 16px 6%;
+  padding: 18px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.site-footer a {
-  color: var(--muted);
+.footer-inner a {
   margin-left: 16px;
-}
-
-.site-footer a:hover {
-  color: #fff;
+  color: var(--muted);
 }
 
 .footer-bottom {
   text-align: center;
   font-size: 12px;
   color: #6b7280;
+  margin-top: 6px;
 }
 
-/* =========================
-   OVERLAY
-========================= */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 5000;
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.overlay-content {
-  text-align: center;
-  position: relative;
-}
-
-.close-overlay {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  cursor: pointer;
-}
-
-/* =========================
-   BUTTON
-========================= */
+/* ================= BUTTON ================= */
 .btn {
+  display: inline-block;
   background: var(--accent);
+  color: #111;
   padding: 14px 32px;
   border-radius: 8px;
-  color: #111;
-  font-weight: 600;
-  display: inline-block;
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 32px;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(245, 158, 11, 0.4);
-}
-
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 @media (max-width: 900px) {
-  nav {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
+  nav { display: none; }
+  .menu-toggle { display: flex; }
 
   .hero {
     grid-template-columns: 1fr;
@@ -384,10 +288,10 @@ section {
   }
 
   .hero-visual {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   section {
-    padding: 120px 6% 100px;
+    padding: 70px 6%;
   }
 }
