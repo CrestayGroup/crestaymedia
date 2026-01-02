@@ -5,10 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crestay Media</title>
+
+  <!-- BASE CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- ENHANCEMENTS -->
+  <link rel="stylesheet" href="assets/css/enhancements.css">
 </head>
 
 <body>
+
+<div id="top"></div>
 
 <header>
   <div class="nav">
@@ -20,7 +26,7 @@
       <a href="#process">Process</a>
     </nav>
 
-    <!-- Mobile Toggle -->
+    <!-- MOBILE TOGGLE -->
     <div class="menu-toggle" id="menuToggle">
       <span></span>
       <span></span>
@@ -29,18 +35,16 @@
   </div>
 </header>
 
-<!-- Mobile Menu -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#top">Home</a>
   <a href="#services">Services</a>
   <a href="#process">Process</a>
 </div>
 
-<div id="top"></div>
-
 <!-- HERO -->
 <section class="hero">
-  <div>
+  <div class="hero-text">
     <h1>Design That <span>Performs</span>.</h1>
     <p>
       We design brands, websites, and digital experiences built for clarity,
@@ -48,13 +52,35 @@
     </p>
     <a href="#" class="btn" id="startProject">Start a Project</a>
   </div>
+
+  <div class="hero-visual">
+    <img src="assets/image/hero-mockup.png" alt="Crestay Media">
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section">
+  <div class="why-grid">
+    <div class="why-text">
+      <h2>Why Crestay Media?</h2>
+      <ul>
+        <li>Performance-driven design focused on results</li>
+        <li>Clean, modern & scalable solutions</li>
+        <li>Clear structure that converts users</li>
+      </ul>
+    </div>
+
+    <div class="why-image">
+      <img src="assets/image/why-mock-up.png" alt="Why Crestay Media">
+    </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
 
-  <div class="grid">
+  <div class="services-grid">
     <div class="card"><h3>Brand Identity</h3></div>
     <div class="card"><h3>UI / UX Design</h3></div>
     <div class="card"><h3>Web Development</h3></div>
@@ -64,15 +90,15 @@
 </section>
 
 <!-- PROCESS -->
-<section id="process" class="process">
-  <h2>Our Process</h2>
+<section id="process" class="process-section">
+  <h2 class="process-title">Our Process</h2>
 
-  <div class="grid">
-    <div class="card">01 Discovery</div>
-    <div class="card">02 Strategy</div>
-    <div class="card">03 Design</div>
-    <div class="card">04 Build</div>
-    <div class="card">05 Launch</div>
+  <div class="process-grid">
+    <div class="process-item">01 Discovery</div>
+    <div class="process-item">02 Strategy</div>
+    <div class="process-item">03 Design</div>
+    <div class="process-item">04 Build</div>
+    <div class="process-item">05 Launch</div>
   </div>
 </section>
 
@@ -95,9 +121,13 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-footer">
   <div class="footer-inner">
-    <div>CRESTAY<span>MEDIA</span></div>
+    <div class="footer-left">
+      <div class="footer-logo">CRESTAY<span>MEDIA</span></div>
+      <p>Design-driven digital experiences built for clarity and growth.</p>
+    </div>
+
     <div class="footer-right">
       <a href="#">Instagram</a>
       <a href="#">Facebook</a>
@@ -113,20 +143,20 @@
 <!-- SCRIPT -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
   const startBtn = document.getElementById("startProject");
   const overlay = document.getElementById("projectOverlay");
 
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
     document.body.style.overflow =
-      mobileMenu.classList.contains("active") ? "hidden" : "";
+      menu.classList.contains("active") ? "hidden" : "";
   });
 
-  mobileMenu.querySelectorAll("a").forEach(link => {
+  menu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
+      menu.classList.remove("active");
       document.body.style.overflow = "";
     });
   });
