@@ -527,3 +527,54 @@ section {
   }
 }
 
+/* =========================
+   FORCE REAL MOBILE LAYOUT
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  header {
+    height: 64px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 110px 6% 80px;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-visual {
+    order: 2;
+    margin-top: 40px;
+  }
+
+  .hero-visual img {
+    max-width: 320px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  section {
+    padding: 80px 6%;
+  }
+
+  /* kill desktop hover on mobile */
+  .card:hover,
+  .hero-visual img:hover,
+  .process-item:hover::before {
+    transform: none;
+  }
+}
