@@ -578,3 +578,10 @@ section {
     transform: none;
   }
 }
+/* WHY IMAGE SIZE FIX */
+.why-image img {
+  width: 100%;
+  max-width: 380px;
+}
+
+
