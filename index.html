@@ -1,41 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crestay Media</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="top"></div>
-
 <header>
   <div class="nav">
     <div class="logo">CRESTAY<span>MEDIA</span></div>
+
     <nav>
-  <div class="menu-toggle" id="menuToggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-
       <a href="#top">Home</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
     </nav>
+
+    <!-- Mobile Toggle -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
+
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#top">Home</a>
   <a href="#services">Services</a>
   <a href="#process">Process</a>
 </div>
 
+<div id="top"></div>
+
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-text fade-up">
+  <div>
     <h1>Design That <span>Performs</span>.</h1>
     <p>
       We design brands, websites, and digital experiences built for clarity,
@@ -43,179 +48,103 @@
     </p>
     <a href="#" class="btn" id="startProject">Start a Project</a>
   </div>
-
-  <div class="hero-visual fade-up">
-    <img 
-      src="assets/image/hero-mockup.png"
-      alt="Crestay Media"
-      loading="eager"
-      decoding="async"
-      width="520"
-      height="360"
-    />
-  </div>
 </section>
 
-<section class="why-section">
-  <div class="container why-grid">
-    <div class="why-text">
-      <h2>Why Crestay Media?</h2>
-      <ul>
-        <li>Performance-driven design focused on results</li>
-        <li>Clean, modern & scalable solutions</li>
-        <li>Clear structure that converts users</li>
-      </ul>
-    </div>
-
-    <div class="why-image">
-      <img src="assets/image/why-mock-up.png" alt="Why Crestay Media">
-    </div>
-  </div>
-</section>
-
+<!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
 
-  <div class="services-grid">
-    <div class="card">
-      <span class="icon">🎨</span>
-      <h3>Brand Identity</h3>
-      <p>Logos, visual systems, and brand foundations.</p>
-    </div>
-
-    <div class="card">
-      <span class="icon">🧠</span>
-      <h3>UI / UX Design</h3>
-      <p>User-focused design that converts.</p>
-    </div>
-
-    <div class="card">
-      <span class="icon">💻</span>
-      <h3>Web Development</h3>
-      <p>Fast, responsive, modern websites.</p>
-    </div>
-
-    <div class="card">
-      <span class="icon">🛒</span>
-      <h3>E-Commerce</h3>
-      <p>Online stores built for sales.</p>
-    </div>
-
-    <div class="card">
-      <span class="icon">⚡</span>
-      <h3>Performance Optimization</h3>
-      <p>Speed, SEO, and technical excellence.</p>
-    </div>
+  <div class="grid">
+    <div class="card"><h3>Brand Identity</h3></div>
+    <div class="card"><h3>UI / UX Design</h3></div>
+    <div class="card"><h3>Web Development</h3></div>
+    <div class="card"><h3>E-Commerce</h3></div>
+    <div class="card"><h3>Performance Optimization</h3></div>
   </div>
 </section>
 
-<section id="process" class="process-section">
-  <h2 class="process-title">Our Process</h2>
+<!-- PROCESS -->
+<section id="process" class="process">
+  <h2>Our Process</h2>
 
-  <div class="process-grid">
-    <div class="process-item">
-      <span class="process-number">01</span>
-      <h3>Discovery</h3>
-      <p>Understanding goals and users.</p>
-    </div>
-
-    <div class="process-item">
-      <span class="process-number">02</span>
-      <h3>Strategy</h3>
-      <p>Defining structure and direction.</p>
-    </div>
-
-    <div class="process-item">
-      <span class="process-number">03</span>
-      <h3>Design</h3>
-      <p>Crafting clean interfaces.</p>
-    </div>
-
-    <div class="process-item">
-      <span class="process-number">04</span>
-      <h3>Build</h3>
-      <p>Fast, scalable development.</p>
-    </div>
-
-    <div class="process-item">
-      <span class="process-number">05</span>
-      <h3>Launch</h3>
-      <p>Testing & optimization.</p>
-    </div>
+  <div class="grid">
+    <div class="card">01 Discovery</div>
+    <div class="card">02 Strategy</div>
+    <div class="card">03 Design</div>
+    <div class="card">04 Build</div>
+    <div class="card">05 Launch</div>
   </div>
 </section>
 
-<!-- FULLSCREEN PROJECT OVERLAY -->
-<div id="projectOverlay" class="project-overlay">
+<!-- OVERLAY -->
+<div class="project-overlay" id="projectOverlay">
   <div class="overlay-content">
     <h2>Let’s Build Something Great</h2>
     <a href="mailto:media@crestay.com" class="btn">Contact Us</a>
 
-    <footer class="site-footer" style="margin-top:80px;">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <div class="footer-logo">CRESTAY<span>MEDIA</span></div>
-          <p>Design-driven digital experiences built for clarity and growth.</p>
-        </div>
+    <div class="overlay-footer">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Email</a>
+    </div>
 
-        <div class="footer-right">
-          <a href="https://instagram.com/Crestay.media" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/share/1S6nijhLqY/" target="_blank">Facebook</a>
-          <a href="mailto:media@crestaymedia.com">Email</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        © 2025 Crestay Media. All rights reserved.
-      </div>
-    </footer>
+    <div class="overlay-footer-copy">
+      © 2025 Crestay Media. All rights reserved.
+    </div>
   </div>
 </div>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>CRESTAY<span>MEDIA</span></div>
+    <div class="footer-right">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Email</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Crestay Media. All rights reserved.
+  </div>
+</footer>
+
+<!-- SCRIPT -->
 <script>
-  document.getElementById("startProject").addEventListener("click", function(e) {
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const startBtn = document.getElementById("startProject");
+  const overlay = document.getElementById("projectOverlay");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+    document.body.style.overflow =
+      mobileMenu.classList.contains("active") ? "hidden" : "";
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+
+  startBtn.addEventListener("click", e => {
     e.preventDefault();
-    document.getElementById("projectOverlay").classList.add("active");
+    overlay.classList.add("active");
     document.body.style.overflow = "hidden";
   });
 
-  document.getElementById("projectOverlay").addEventListener("click", function(e) {
-    if (e.target === this) {
-      this.classList.remove("active");
+  overlay.addEventListener("click", e => {
+    if (e.target === overlay) {
+      overlay.classList.remove("active");
       document.body.style.overflow = "";
     }
   });
+});
 </script>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#top">Home</a>
-  <a href="#services">Services</a>
-  <a href="#process">Process</a>
-</div>
-<script>
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuToggle && mobileMenu) {
-
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("active");
-
-      // lock scroll when menu is open
-      document.body.style.overflow =
-        mobileMenu.classList.contains("active") ? "hidden" : "";
-    });
-
-    // close menu on link click
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
-      });
-    });
-
-  }
-</script>
-
 
 </body>
 </html>
