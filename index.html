@@ -10,6 +10,7 @@
 
 <body>
 
+<!-- TOP -->
 <div id="top"></div>
 
 <!-- HEADER -->
@@ -22,14 +23,11 @@
       <a href="#why">Crestay</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
-      <a href="#" class="nav-contact js-open-project">Contact</a>
+      <a href="#" id="contactBtn">Contact</a>
     </nav>
 
-    <!-- MOBILE TOGGLE -->
     <div class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </div>
 </header>
@@ -40,7 +38,7 @@
   <a href="#why">Crestay</a>
   <a href="#services">Services</a>
   <a href="#process">Process</a>
-  <a href="#" class="mobile-contact js-open-project">Contact</a>
+  <a href="#" id="contactBtnMobile">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -51,7 +49,7 @@
       We design brands, websites, and digital experiences built for clarity,
       performance, and growth.
     </p>
-    <a href="#" class="btn js-open-project">Start a Project</a>
+    <a href="#" class="btn" id="startProject">Start a Project</a>
   </div>
 
   <div class="hero-visual">
@@ -80,18 +78,20 @@
 <!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
+
   <div class="services-grid">
-    <div class="card"><h3>Brand Identity</h3></div>
-    <div class="card"><h3>UI / UX Design</h3></div>
-    <div class="card"><h3>Web Development</h3></div>
-    <div class="card"><h3>E-Commerce</h3></div>
-    <div class="card"><h3>Performance Optimization</h3></div>
+    <div class="card">Brand Identity</div>
+    <div class="card">UI / UX Design</div>
+    <div class="card">Web Development</div>
+    <div class="card">E-Commerce</div>
+    <div class="card">Performance Optimization</div>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section id="process" class="process-section">
   <h2 class="process-title">Our Process</h2>
+
   <div class="process-grid">
     <div class="process-item">01 Discovery</div>
     <div class="process-item">02 Strategy</div>
@@ -104,15 +104,13 @@
 <!-- OVERLAY -->
 <div class="project-overlay" id="projectOverlay">
   <div class="overlay-content">
-    <button class="overlay-close" aria-label="Close">&times;</button>
-
     <h2>Let’s Build Something Great</h2>
     <a href="mailto:media@crestay.com" class="btn">Contact Us</a>
 
     <div class="overlay-footer">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">Email</a>
+      <span>Instagram</span>
+      <span>Facebook</span>
+      <span>Email</span>
     </div>
 
     <div class="overlay-footer-copy">
@@ -124,15 +122,15 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div>
+    <div class="footer-left">
       <strong>CRESTAY<span>MEDIA</span></strong>
       <p>Design-driven digital experiences built for clarity and growth.</p>
     </div>
 
     <div class="footer-right">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">Email</a>
+      <span>Instagram</span>
+      <span>Facebook</span>
+      <span>Email</span>
     </div>
   </div>
 
@@ -143,56 +141,34 @@
 
 <!-- SCRIPT -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("projectOverlay");
+const startBtn = document.getElementById("startProject");
+const contactBtn = document.getElementById("contactBtn");
+const contactBtnMobile = document.getElementById("contactBtnMobile");
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const overlay = document.getElementById("projectOverlay");
+menuToggle.onclick = () => {
+  mobileMenu.classList.toggle("active");
+  document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+};
 
-  // Mobile menu
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-    document.body.style.overflow =
-      mobileMenu.classList.contains("active") ? "hidden" : "";
-  });
+[startBtn, contactBtn, contactBtnMobile].forEach(btn => {
+  if (!btn) return;
+  btn.onclick = (e) => {
+    e.preventDefault();
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    mobileMenu.classList.remove("active");
+  };
+});
 
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
-      document.body.style.overflow = "";
-    });
-  });
-
-  // Open overlay (Start + Contact)
-  document.querySelectorAll(".js-open-project").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      overlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  // Close overlay
-  overlay.addEventListener("click", e => {
-    if (e.target === overlay) {
-      overlay.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-  });
-
-  document.querySelector(".overlay-close").addEventListener("click", () => {
+overlay.onclick = (e) => {
+  if (e.target === overlay) {
     overlay.classList.remove("active");
     document.body.style.overflow = "";
-  });
-
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-      overlay.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-  });
-
-});
+  }
+};
 </script>
 
 </body>
