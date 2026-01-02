@@ -460,3 +460,21 @@ nav a:hover {
 }
 
 
+/* =========================
+   FIX MOBILE EXTRA LINKS
+========================= */
+
+@media (max-width: 900px) {
+  header nav,
+  header nav a {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .process-section {
+    padding-bottom: 80px;
+  }
+}
+body {
+  overflow-x: hidden;
+}
